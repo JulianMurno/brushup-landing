@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brush Up - Tu Asistente de Estudio</title>
+
+  <link rel="icon" type="image/png" href="assets/icon-app.png">
+
+  <meta name="description" content="Brush Up: tu asistente virtual de estudio. Gestioná tus sesiones, descansos y progreso de manera inteligente.">
+  <meta name="theme-color" content="#0A1A2F">
+  <meta property="og:title" content="Brush Up - Tu Asistente de Estudio">
+  <meta property="og:description" content="Gestioná tus sesiones, descansos y progreso con Brush Up, tu asistente virtual de estudio.">
+  <meta property="og:image" content="assets/logo-app.png">
+  <meta property="og:type" content="website">
+<!--  <meta property="og:url" content="https://tusitio.com">-->
+  <meta name="mobile-web-app-capable" content="yes">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul-marino: #0A1A2F;
+      --azul-secundario: #12345A;
+      --azul-brillante: #2563EB;
+      --gris-claro: #E5E7EB;
+      --texto-claro: #F3F4F6;
+      --texto-suave: #9CA3AF;
+    }
+
+    body {
+      scroll-behavior: smooth;
+      background-color: var(--azul-marino);
+      color: var(--texto-claro);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0F172A, #1E3A8A);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .rotating-logo-container {
+      position: relative;
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      margin-bottom: 30px;
+    }
+
+    .rotating-bg {
+      position: absolute;
+      top: 37%;
+      left: 50%;
+      width: 70%;
+      height: 70%;
+      transform: translate(-50%, -50%);
+      animation: spin 14s linear infinite;
+      opacity: 0.35;
+      filter: blur(2px) drop-shadow(0 0 10px rgb(255, 255, 255));
+      z-index: 1;
+    }
+
+    .hero-logo {
+      position: relative;
+      width: 260px;
+      height: auto;
+      z-index: 2;
+    }
+
+    @keyframes spin {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 1.1; 
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero-logo { width: 200px; }
+    }
+
+
+    .btn-primary {
+      background-color: var(--azul-brillante);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #1D4ED8;
+    }
+
+    .btn-light {
+      background-color: var(--azul-brillante);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-light:hover {
+      background-color: #1D4ED8;
+      color: white;
+    }
+
+    .features {
+      background-color: var(--azul-secundario);
+      padding: 60px 20px;
+    }
+
+    .mockup {
+      background-color: #0F1E36;
+      padding: 60px 20px;
+    }
+
+    .app-screens {
+      position: relative;
+      margin-top: 40px;
+      perspective: 1000px;
+      align-items: flex-start;
+    }
+
+    .preview-img {
+      width: 240px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .img-left {
+      transform: rotate(-12deg) translateX(-40px);
+      z-index: 1;
+    }
+
+    .img-center {
+      transform: scale(1.1);
+      z-index: 2;
+    }
+
+    .img-right {
+      transform: rotate(12deg) translateX(40px);
+      z-index: 1;
+    }
+
+    .app-screens:hover .preview-img {
+      transform: scale(1) rotate(0);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .app-screens:hover .img-center {
+      transform: scale(1.1);
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .app-screens {
+        flex-direction: column;
+      }
+      .preview-img {
+        transform: none !important;
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    }
+
+    .feedback {
+      background: #112240;
+      padding: 60px 20px;
+    }
+
+    .form-control {
+      background-color: #1E293B;
+      border: 1px solid #334155;
+      color: #E5E7EB;
+    }
+
+    .form-control::placeholder {
+      color: #9CA3AF;
+    }
+
+    footer {
+      background-color: #010A1A;
+      color: #CBD5E1;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer a {
+      color: #60A5FA;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.3rem;
+    }
+
+    footer a:hover {
+      color: #93C5FD;
+    }
+
+    small, .text-muted {
+      color: var(--texto-suave) !important;
+    }
+
+    @media (max-width: 320px) {
+      .modal-dialog {
+        margin: 10px;
+        max-width: 95%;
+      }
+
+      .modal-content {
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+
+      .modal-body {
+        font-size: 0.85rem;
+        line-height: 1.3;
+      }
+
+      .btn-lg {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="rotating-logo-container">
+      <img src="assets/icon-app.png" alt="Icono Brush Up" class="rotating-bg">
+      <img src="assets/logo-app.png" alt="Logo Brush Up" class="hero-logo">
+    </div>
+    <h1>Aprender nunca fue tan inteligente</h1>
+    
+    <h2 class="lead-subtitle mt-3 mb-5">Organizá tus sesiones, potenciá tu enfoque y medí tu progreso real.</h2>
+    <a href="#" class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#installModal">
+      <i class="fa-brands fa-android me-2"></i>Descargar para Android
+    </a>    
+    <p style="margin-top: 20px;">153MB - Versión actual: 1.1.0</p>
+  </section>
+
+  <section class="features text-center">
+    <div class="container">
+      <h2 class="mb-4 fw-bold">Estudiá con más inteligencia, no más tiempo</h2>
+      <p class="text-muted mb-5">Brush Up te ayuda a administrar tus sesiones de estudio, controlar descansos y seguir tu progreso fácilmente.</p>
+
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-4 mb-4">
+          <i class="fa-solid fa-clock fa-3x text-primary mb-3"></i>
+          <h5>Gestión de tiempo</h5>
+          <p>Organizá tus sprints y descansos fácilmente.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <i class="fa-solid fa-chart-line fa-3x text-primary mb-3"></i>
+          <h5>Progreso visual</h5>
+          <p>Seguimiento claro de tus avances y objetivos.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <i class="fa-solid fa-brain fa-3x text-primary mb-3"></i>
+          <h5>Productividad real</h5>
+          <p>Estudiá con enfoque y sin distracciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mockup text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Vista previa de la app</h2>
+      <p class="text-muted mb-5">Así luce Brush Up desde tu teléfono.</p>
+
+      <div class="app-screens position-relative d-flex justify-content-center align-items-center flex-wrap">
+        <img src="assets/screenshot1.jpg" class="preview-img img-left" alt="Pantalla 1 de Brush Up">
+        <img src="assets/screenshot.jpg" class="preview-img img-center" alt="Pantalla 2 de Brush Up">
+        <img src="assets/screenshot2.jpg" class="preview-img img-right" alt="Pantalla 3 de Brush Up">
+      </div>
+    </div>
+  </section>
+
+  <section class="text-center py-5">
+    <div class="container">
+      <h2 class="fw-bold mb-3">Sé parte del equipo de testers</h2>
+      <p class="text-muted mb-4">Descargá la app y contanos tu experiencia. Tu feedback ayuda a mejorar Brush Up antes del lanzamiento en iOS.</p>
+      <a href="#feedback" class="btn btn-primary btn-lg">Enviar feedback</a>
+    </div>
+  </section>
+
+  <section id="feedback" class="feedback">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4">Enviá tu feedback</h2>
+      <p class="text-center text-muted mb-5">Tu opinión nos ayuda a crear una mejor experiencia de estudio.</p>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form id="feedbackForm" action="https://formspree.io/f/xanlqkvw" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre (opcional)</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Tu nombre">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email (opcional)</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="tuemail@ejemplo.com">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Tu mensaje o sugerencia *</label>
+              <textarea 
+                class="form-control" 
+                id="message" 
+                name="message" 
+                rows="4" 
+                placeholder="Escribí tu comentario..."
+              ></textarea>
+              <small id="messageError" class="text-danger d-none">Este campo es obligatorio</small>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Enviar feedback</button>
+            <p class="mt-3 text-success d-none" id="formSuccess">✅ ¡Gracias por tu mensaje! Lo recibimos correctamente.</p>
+            <p class="mt-3 text-danger d-none" id="formError">❌ Ocurrió un error al enviar. Intenta nuevamente.</p>
+          </form>          
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="modal fade" id="installModal" tabindex="-1" aria-labelledby="installModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="installModalLabel">Instalación del archivo APK</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Es posible que tu dispositivo Android muestre una advertencia indicando que el archivo no está verificado.
+          <br><br>
+          Podés continuar con la instalación seleccionando <strong>“Instalar de todas formas”</strong>.  
+          <br><br>
+          El archivo es seguro y proviene del desarrollador oficial de <strong>Brush Up</strong>.
+        </div>
+        <div class="modal-footer border-0">
+          <a href="https://expo.dev/artifacts/eas/865iPT1U9msgeKBduRXKSe.apk" class="btn btn-primary w-100">
+            Continuar con la descarga
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <footer>
+    <p>© 2025 Brush Up | Todos los derechos reservados</p>
+    <p>
+      <a href="https://github.com/JulianMurno" target="_blank" title="Ver en GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="javascript:void(0);" 
+        id="discordCopy" 
+        data-bs-toggle="popover" 
+        data-bs-trigger="focus" 
+        data-bs-content="¡Copiado!"
+        data-bs-placement="top">
+        <i class="fab fa-discord"></i>
+      </a> 
+      <a href="mailto:tucorreo@gmail.com" title="Enviar correo">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </p>    
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const discordBtn = document.getElementById('discordCopy');
+    const popover = new bootstrap.Popover(discordBtn, { container: 'body' });
+
+    discordBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText("i.am.jey").then(() => {
+        popover.show();
+        setTimeout(() => popover.hide(), 2000);
+      });
+    });
+
+    const form = document.getElementById('feedbackForm');
+    const successMsg = document.getElementById('formSuccess');
+    const errorMsg = document.getElementById('formError');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successMsg.classList.add('d-none');
+      errorMsg.classList.add('d-none');
+
+      const messageField = document.getElementById('message');
+      const messageError = document.getElementById('messageError');
+
+      if (messageField.value.trim() === '') {
+        messageError.classList.remove('d-none');
+        return;
+      } else {
+        messageError.classList.add('d-none');
+      }
+
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        successMsg.classList.remove('d-none');
+      } else {
+        errorMsg.classList.remove('d-none');
+      }
+    });
+  </script>
+</body>
+</html>
