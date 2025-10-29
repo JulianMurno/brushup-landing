@@ -251,10 +251,19 @@
     <h1>Aprender nunca fue tan inteligente</h1>
     
     <h2 class="lead-subtitle mt-3 mb-5">Organizá tus sesiones, potenciá tu enfoque y medí tu progreso real.</h2>
-    <a href="#" class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#installModal">
-      <i class="fa-brands fa-android me-2"></i>Descargar para Android
-    </a>    
-    <p style="margin-top: 20px;">153MB - Versión actual: 1.1.0</p>
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+      <!-- Android -->
+      <a href="#" class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#installModal">
+        <i class="fa-brands fa-android me-2"></i>Descargar para Android
+      </a>
+      
+  
+      <!-- iOS -->
+      <button class="btn btn-outline-light btn-lg" id="iosButton"  data-bs-toggle="modal" data-bs-target="#iosModal">
+        <i class="fa-brands fa-apple me-2"></i>Descargar para iOS
+      </button>
+    </div>
+    <p style="margin-top: 20px;">107MB - Versión actual: 1.1.0</p>
   </section>
 
   <section class="features text-center">
@@ -353,73 +362,6 @@
           El archivo es seguro y proviene del desarrollador oficial de <strong>Brush Up</strong>.
         </div>
         <div class="modal-footer border-0">
-          <a href="https://expo.dev/artifacts/eas/f2vrxfKJM6di2sHv8DjJFq.apk" class="btn btn-primary w-100">
-            Continuar con la descarga
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="modal fade" id="iosModal" tabindex="-1" aria-labelledby="iosModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content bg-dark text-light">
-        <div class="modal-header border-0">
-          <h5 class="modal-title" id="iosModalLabel">Versión iOS</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body text-center">
-          <i class="fa-brands fa-apple fa-3x mb-3 text-secondary"></i>
-          <p>La versión para iPhone y iPad estará disponible próximamente...</p>
-        </div>
-        <div class="modal-footer border-0">
-          <button class="btn btn-secondary w-100" data-bs-dismiss="modal">Entendido</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <section class="hero">
-    <div class="rotating-logo-container">
-      <img src="assets/icon-app.png" alt="Icono Brush Up" class="rotating-bg">
-      <img src="assets/logo-app.png" alt="Logo Brush Up" class="hero-logo">
-    </div>
-    <h1>Aprender nunca fue tan inteligente</h1>
-    <h2 class="lead-subtitle mt-3 mb-5">
-      Organizá tus sesiones, potenciá tu enfoque y medí tu progreso real.
-    </h2>
-  
-    <!-- Botones de descarga -->
-    <div class="d-flex justify-content-center flex-wrap gap-3">
-      <!-- Android -->
-      <a href="#" class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#installModal">
-        <i class="fa-brands fa-android me-2"></i>Descargar para Android
-      </a>
-  
-      <!-- iOS -->
-      <button class="btn btn-outline-light btn-lg" id="iosButton" disabled data-bs-toggle="modal" data-bs-target="#iosModal">
-        <i class="fa-brands fa-apple me-2"></i>Descargar para iOS
-      </button>
-    </div>
-  
-    <p style="margin-top: 20px;">153MB - Versión actual: 1.1.0</p>
-  </section>
-  
-  <!-- Modal Android -->
-  <div class="modal fade" id="installModal" tabindex="-1" aria-labelledby="installModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content bg-dark text-light">
-        <div class="modal-header border-0">
-          <h5 class="modal-title" id="installModalLabel">Instalación del archivo APK</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          Es posible que tu dispositivo Android muestre una advertencia indicando que el archivo no está verificado.
-          <br><br>
-          Podés continuar con la instalación seleccionando <strong>“Instalar de todas formas”</strong>.  
-          <br><br>
-          El archivo es seguro y proviene del desarrollador oficial de <strong>Brush Up</strong>.
-        </div>
-        <div class="modal-footer border-0">
           <a href="https://expo.dev/artifacts/eas/865iPT1U9msgeKBduRXKSe.apk" class="btn btn-primary w-100">
             Continuar con la descarga
           </a>
@@ -428,7 +370,6 @@
     </div>
   </div>
   
-  <!-- Modal iOS (próximamente) -->
   <div class="modal fade" id="iosModal" tabindex="-1" aria-labelledby="iosModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-dark text-light">
@@ -438,15 +379,14 @@
         </div>
         <div class="modal-body text-center">
           <i class="fa-brands fa-apple fa-3x mb-3 text-secondary"></i>
-          <p>La versión para iPhone y iPad estará disponible próximamente en la App Store.</p>
-          <p class="text-muted mb-0">¡Seguinos en nuestras redes para enterarte del lanzamiento!</p>
+          <p>La versión para iPhone y iPad estará disponible próximamente.</p>
         </div>
         <div class="modal-footer border-0">
           <button class="btn btn-secondary w-100" data-bs-dismiss="modal">Entendido</button>
         </div>
       </div>
     </div>
-  </div>  
+  </div>
 
   <footer>
     <p>© 2025 Brush Up | Todos los derechos reservados</p>
@@ -462,7 +402,7 @@
         data-bs-placement="top">
         <i class="fab fa-discord"></i>
       </a> 
-      <a href="mailto:julianmurno@gmail.com" title="Enviar correo">
+      <a href="mailto:tucorreo@gmail.com" title="Enviar correo">
         <i class="fa-solid fa-envelope"></i>
       </a>
     </p>    
