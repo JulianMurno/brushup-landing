@@ -390,6 +390,60 @@
     </div>
   </div>
 
+  <div class="text-center mt-4 mb-3">
+    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#changelogModal">
+      <i class="fa-solid fa-clock-rotate-left me-2"></i> Cambios anteriores
+    </button>
+  </div>
+
+  <div class="modal fade" id="changelogModal" tabindex="-1" aria-labelledby="changelogModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark text-light border-0">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold" id="changelogModalLabel">Historial de versiones</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-4">
+            <h6 class="text-info fw-bold">Versión 1.2.1 <small class="text-muted">(30 Oct. 2025)</small></h6>
+            <ul>
+              <li>Bug corregido acerca de "Configuración de Estudio", al guardar la opción "Personalizado".</li>
+              <li>Calendario configurado en español.</li>
+              <li>Nuevo componente modal en "Configuración de Estudio".</li>
+            </ul>
+          </div>
+          <div class="mb-4">
+            <h6 class="text-info fw-bold">Versión 1.2.0 <small class="text-muted">(29 Oct. 2025)</small></h6>
+            <ul>
+              <li>Modal de descarga actualizado y versión Android .APK disponible.</li>
+              <li>Optimización de tamaño y rendimiento general.</li>
+            </ul>
+          </div>
+          <div class="mb-4">
+            <h6 class="text-info fw-bold">Versión 1.1.0 <small class="text-muted">(28 Oct. 2025)</small></h6>
+            <ul>
+              <li>Diseño renovado de la landing page.</li>
+              <li>Correcciones menores en la interfaz de usuario.</li>
+              <li>Bug corregido acerca de insertar datos "vacíos".</li>
+            </ul>
+          </div>
+          <div class="mb-2">
+            <h6 class="text-info fw-bold">Versión 1.0.0 <small class="text-muted">(27 Oct. 2025)</small></h6>
+            <ul>
+              <li>Lanzamiento inicial de Brush Up para Android.</li>
+              <li>Funciones básicas de estudio y descanso implementadas.</li>
+              <li>Diseño simple y primeros testers habilitados.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <footer>
     <p>© 2025 Brush Up | Todos los derechos reservados</p>
     <p>
